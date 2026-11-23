@@ -1,0 +1,1800 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>About Us | Sri Indhu Ceramics</title>
+    <meta name="description"
+        content="Learn about Sri Indhu Ceramics, our traditional pottery craft, quality, and values.">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap');
+
+        /* Basic styles for the Sri Indhu Ceramics website */
+
+        /* Set a simple base style for the whole page */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background-color: #f7f1e7;
+            color: #302820;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            color: #55291f;
+        }
+
+        a:focus,
+        button:focus,
+        input:focus,
+        textarea:focus {
+            outline: 2px solid #bc6545;
+        }
+
+        /* Brand name and page navigation */
+        .head {
+            padding: 30px 18px 24px;
+            text-align: center;
+        }
+
+        .head h1,
+        .head .brand_name {
+            margin: 0;
+            color: #55291f;
+            font-family: Georgia, serif;
+            font-size: 42px;
+        }
+
+        .head .brand_name {
+            display: block;
+        }
+
+        .head h4 {
+            margin: 10px 0 0;
+            color: #756b60;
+            font-size: 14px;
+            font-weight: normal;
+        }
+
+        .nav_bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+            width: 90%;
+            margin: 0 auto;
+            padding: 14px;
+            border: 1px solid #d8c7b5;
+            background-color: #fffdf8;
+        }
+
+        .nav_bar>a,
+        .drop_down>a {
+            display: inline-block;
+            padding: 8px;
+            color: #55291f;
+            font-size: 15px;
+            text-decoration: none;
+        }
+
+        .nav_bar>a:hover,
+        .drop_down>a:hover {
+            color: #bc6545;
+        }
+
+        .drop_down {
+            position: relative;
+        }
+
+        #drop_content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 1;
+            display: none;
+            min-width: 150px;
+            padding: 6px;
+            border: 1px solid #d8c7b5;
+            background-color: #fffdf8;
+        }
+
+        .drop_down:hover #drop_content,
+        .drop_down:focus-within #drop_content {
+            display: block;
+        }
+
+        #drop_content a {
+            display: block;
+            padding: 10px;
+            color: #55291f;
+            text-decoration: none;
+        }
+
+        #drop_content a:hover {
+            background-color: #f5e8d9;
+        }
+
+        /* Shared page headings and large introduction areas */
+        .about_hero,
+        .contact_hero {
+            width: 90%;
+            margin: 32px auto 48px;
+            padding: 55px 24px;
+            background-color: #803b29;
+            color: #fff8ee;
+            text-align: center;
+        }
+
+        .about_hero h1,
+        .contact_hero h1 {
+            max-width: 850px;
+            margin: 0 auto;
+            color: #fff8ee;
+            font-family: Georgia, serif;
+            font-size: 44px;
+        }
+
+        .about_hero p,
+        .contact_hero p {
+            max-width: 700px;
+            margin: 18px auto 0;
+            color: #f5e8d9;
+            line-height: 1.7;
+        }
+
+        .section_title {
+            width: 90%;
+            margin: 55px auto 22px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #bc6545;
+            color: #55291f;
+            font-family: Georgia, serif;
+            font-size: 32px;
+        }
+
+        /* About page sections and pictures */
+        .welcome,
+        .experience,
+        .craftsmanship,
+        .quality,
+        .modern,
+        .Contact {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 28px;
+            width: 90%;
+            margin: 0 auto 45px;
+        }
+
+        .experience,
+        .modern {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .welcome_text,
+        .experience_text,
+        .craftsmanship_text,
+        .quality_text,
+        .modern_text,
+        .Contact_details {
+            padding: 24px;
+            border: 1px solid #d8c7b5;
+            background-color: #fffdf8;
+            color: #756b60;
+            line-height: 1.7;
+        }
+
+        .welcome_text p,
+        .experience_text p,
+        .craftsmanship_text p,
+        .quality_text p,
+        .modern_text p {
+            margin: 0 0 14px;
+        }
+
+        .welcome_text p:first-child {
+            color: #55291f;
+            font-family: Georgia, serif;
+            font-size: 22px;
+        }
+
+        .quality_text ul {
+            margin-bottom: 0;
+            padding-left: 22px;
+        }
+
+        .quality_text li {
+            margin: 6px 0;
+        }
+
+        .welcome_image,
+        .experience_image,
+        .craftsmanship_image,
+        .quality_image,
+        .modern_image,
+        .Contact_image {
+            overflow: hidden;
+            background-color: #eadccc;
+        }
+
+        .welcome_image img,
+        .experience_image img,
+        .craftsmanship_image img,
+        .quality_image img,
+        .modern_image img,
+        .Contact_image img {
+            width: 100%;
+            min-height: 280px;
+            object-fit: cover;
+        }
+
+        /* Cards used on the About and Contact pages */
+        .value_cards,
+        .why_cards,
+        .quick_contact {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 18px;
+            width: 90%;
+            margin: 0 auto 50px;
+        }
+
+        .value_card,
+        .why_card,
+        .quick_card {
+            padding: 22px;
+            border: 1px solid #d8c7b5;
+            background-color: #fffdf8;
+        }
+
+        .value_card h3,
+        .why_card h3,
+        .quick_card h3 {
+            margin: 0 0 8px;
+            color: #55291f;
+            font-family: Georgia, serif;
+            font-size: 23px;
+        }
+
+        .value_card p,
+        .why_card p,
+        .quick_card p {
+            margin: 0;
+            color: #756b60;
+            line-height: 1.6;
+        }
+
+        /* Contact details and contact form */
+        .Contact_details h2 {
+            margin: 0 0 18px;
+            color: #55291f;
+            font-family: Georgia, serif;
+            font-size: 28px;
+        }
+
+        .block {
+            display: block;
+            margin: 0 0 12px;
+            padding: 12px;
+            border-left: 3px solid #bc6545;
+            background-color: #faf4ea;
+            color: #756b60;
+            line-height: 1.6;
+        }
+
+        .block strong {
+            color: #55291f;
+        }
+
+        .enquire {
+            width: 80%;
+            margin: 60px auto;
+        }
+
+        .enquire>h2,
+        .why_us>h2,
+        .map>h2 {
+            margin: 0 0 22px;
+            color: #55291f;
+            font-family: Georgia, serif;
+            font-size: 32px;
+            text-align: center;
+        }
+
+        .form {
+            display: grid;
+            gap: 16px;
+            padding: 28px;
+            border: 1px solid #d8c7b5;
+            background-color: #fffdf8;
+        }
+
+        .form h3 {
+            margin: 0;
+            color: #55291f;
+            font-family: Georgia, serif;
+            font-size: 25px;
+        }
+
+        .id {
+            display: grid;
+            gap: 6px;
+            color: #55291f;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .id input,
+        .id textarea {
+            width: 100%;
+            padding: 11px;
+            border: 1px solid #c9b7a4;
+            background-color: #fffefa;
+            color: #302820;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+        }
+
+        .id textarea {
+            min-height: 105px;
+        }
+
+        .submit_button,
+        .contact_action {
+            display: inline-block;
+            padding: 12px 20px;
+            border: 0;
+            background-color: #8e422d;
+            color: #fff8ee;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .submit_button:hover,
+        .contact_action:hover {
+            background-color: #55291f;
+        }
+
+        .contact_buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin: 0 auto 60px;
+        }
+
+        .why_us,
+        .map {
+            width: 90%;
+            margin: 60px auto;
+        }
+
+        .map {
+            text-align: center;
+        }
+
+        .map p {
+            color: #756b60;
+        }
+
+        .map iframe {
+            display: block;
+            width: 100%;
+            min-height: 320px;
+            border: 0;
+        }
+
+        /* FAQ page */
+        .faq {
+            width: 85%;
+            margin: 50px auto 0;
+            text-align: center;
+        }
+
+        .faq>h1 {
+            margin: 0 0 28px;
+            color: #55291f;
+            font-family: Georgia, serif;
+            font-size: 40px;
+        }
+
+        .faq_box {
+            display: grid;
+            gap: 12px;
+            text-align: left;
+        }
+
+        .faq_box details {
+            padding: 14px 18px;
+            border: 1px solid #d8c7b5;
+            background-color: #fffdf8;
+        }
+
+        .faq_box summary {
+            padding: 8px 0;
+            color: #55291f;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .faq_box details p {
+            margin: 12px 0 4px;
+            color: #756b60;
+            line-height: 1.7;
+        }
+
+        /* Social media links */
+        .whatsapp-btn,
+        .instagram-btn {
+            position: fixed;
+            right: 20px;
+            display: block;
+            width: 50px;
+            height: 50px;
+            overflow: hidden;
+            border: 2px solid #fffdf8;
+            border-radius: 50%;
+            background-color: #ffffff;
+        }
+
+        .whatsapp-btn {
+            bottom: 20px;
+        }
+
+        .instagram-btn {
+            bottom: 82px;
+        }
+
+        .whatsapp-btn img,
+        .instagram-btn img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Keep content visible if the page uses reveal classes */
+        .reveal,
+        .reveal.is-visible,
+        .footer.reveal h2,
+        .footer.reveal p,
+        .footer.is-visible h2,
+        .footer.is-visible p {
+            opacity: 1;
+        }
+
+        /* Shared footer and call-to-action areas */
+        .about_cta,
+        .visit_us {
+            width: 85%;
+            margin: 65px auto 0;
+            padding: 40px 24px;
+            background-color: #55291f;
+            color: #fff8ee;
+            text-align: center;
+        }
+
+        .about_cta h2,
+        .visit_us h2 {
+            margin: 0 0 10px;
+            color: #fff8ee;
+            font-family: Georgia, serif;
+            font-size: 32px;
+        }
+
+        .about_cta p,
+        .visit_us p {
+            max-width: 660px;
+            margin: 0 auto 20px;
+            color: #f5e8d9;
+            line-height: 1.7;
+        }
+
+        .about_cta a {
+            display: inline-block;
+            padding: 12px 20px;
+            background-color: #f2d6b5;
+            color: #55291f;
+            text-decoration: none;
+        }
+
+        .about_cta a:hover {
+            background-color: #fff8ee;
+        }
+
+        .footer {
+            margin-top: 70px;
+            padding: 45px 20px 30px;
+            background-color: #55291f;
+            color: #f5e8d9;
+            line-height: 1.7;
+            text-align: center;
+        }
+
+        .footer h2 {
+            margin: 0 0 8px;
+            color: #fff8ee;
+            font-family: Georgia, serif;
+            font-size: 32px;
+        }
+
+        .footer p {
+            margin: 7px 0;
+            font-size: 15px;
+        }
+
+        /* On smaller screens, stack the content and cards vertically */
+        @media (max-width: 760px) {
+
+            .head h1,
+            .head .brand_name {
+                font-size: 34px;
+            }
+
+            .nav_bar {
+                gap: 8px;
+                width: 95%;
+            }
+
+            .about_hero,
+            .contact_hero,
+            .section_title,
+            .welcome,
+            .experience,
+            .craftsmanship,
+            .quality,
+            .modern,
+            .Contact,
+            .value_cards,
+            .why_cards,
+            .quick_contact,
+            .why_us,
+            .map {
+                width: 94%;
+            }
+
+            .welcome,
+            .experience,
+            .craftsmanship,
+            .quality,
+            .modern,
+            .Contact,
+            .value_cards,
+            .why_cards,
+            .quick_contact {
+                grid-template-columns: 1fr;
+            }
+
+            .about_hero h1,
+            .contact_hero h1 {
+                font-size: 34px;
+            }
+
+            .enquire,
+            .faq,
+            .about_cta,
+            .visit_us {
+                width: 92%;
+            }
+
+            .whatsapp-btn,
+            .instagram-btn {
+                right: 12px;
+                width: 44px;
+                height: 44px;
+            }
+
+            .instagram-btn {
+                bottom: 72px;
+            }
+        }
+
+        /* Softer, warmer edges for the About Us page */
+        .nav_bar {
+            border: 0;
+            border-radius: 999px;
+            box-shadow: 0 8px 24px rgba(82, 41, 31, 0.08);
+        }
+
+        #drop_content {
+            border: 0;
+            border-radius: 14px;
+            box-shadow: 0 12px 28px rgba(82, 41, 31, 0.12);
+        }
+
+        .about_hero,
+        .about_cta {
+            border-radius: 28px;
+            box-shadow: 0 14px 34px rgba(82, 41, 31, 0.12);
+        }
+
+        .section_title {
+            border-bottom: 0;
+            padding-bottom: 0;
+            text-align: center;
+        }
+
+        .section_title::after {
+            content: "";
+            display: block;
+            width: 54px;
+            height: 3px;
+            margin: 12px auto 0;
+            border-radius: 999px;
+            background: #bc6545;
+            opacity: 0.7;
+        }
+
+        .welcome_text,
+        .experience_text,
+        .craftsmanship_text,
+        .quality_text,
+        .modern_text {
+            border: 0;
+            border-radius: 22px;
+            background: #fffdf8;
+            box-shadow: 0 10px 28px rgba(82, 41, 31, 0.08);
+        }
+
+        .welcome_image,
+        .experience_image,
+        .craftsmanship_image,
+        .quality_image,
+        .modern_image {
+            border-radius: 22px;
+            box-shadow: 0 10px 28px rgba(82, 41, 31, 0.10);
+        }
+
+        .value_card {
+            border: 0;
+            border-radius: 20px;
+            box-shadow: 0 8px 24px rgba(82, 41, 31, 0.08);
+            transition: transform 180ms ease, box-shadow 180ms ease;
+        }
+
+        .value_card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 13px 30px rgba(82, 41, 31, 0.12);
+        }
+
+        .about_cta a {
+            border-radius: 999px;
+        }
+
+        @media (max-width: 760px) {
+            .nav_bar {
+                border-radius: 22px;
+            }
+
+            .about_hero,
+            .about_cta,
+            .welcome_text,
+            .experience_text,
+            .craftsmanship_text,
+            .quality_text,
+            .modern_text,
+            .welcome_image,
+            .experience_image,
+            .craftsmanship_image,
+            .quality_image,
+            .modern_image,
+            .value_card {
+                border-radius: 18px;
+            }
+        }
+
+        /* Warm cream, brown, and bisque theme inspired by the supplied style */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            min-width: 320px;
+            margin: 0;
+            overflow-x: hidden;
+            background-color: #fffaf3;
+            color: #4b2e20;
+            font-family: "Times New Roman", Times, serif;
+            -webkit-font-smoothing: auto;
+        }
+
+        body::before,
+        .head::before {
+            display: none;
+        }
+
+        a {
+            color: brown;
+        }
+
+        :focus-visible {
+            outline: 3px solid rgb(209, 10, 176);
+            outline-offset: 3px;
+        }
+
+        .head {
+            padding: 25px 10px 15px;
+            text-align: center;
+        }
+
+        .head h1,
+        .head .brand_name {
+            margin: 0;
+            color: brown;
+            font-family: "Times New Roman", Times, serif;
+            font-size: clamp(32px, 5vw, 42px);
+            font-weight: bold;
+            letter-spacing: normal;
+            line-height: 1.1;
+        }
+
+        .head h4 {
+            margin: 12px 0 0;
+            color: #4b2e20;
+            font-size: 18px;
+            font-weight: normal;
+            letter-spacing: normal;
+            text-transform: none;
+        }
+
+        .nav_bar {
+            position: sticky;
+            z-index: 1000;
+            top: 8px;
+            display: flex;
+            width: 90%;
+            min-height: 0;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-evenly;
+            gap: 8px 18px;
+            margin: 0 auto;
+            padding: 12px;
+            border: 2px solid bisque;
+            border-radius: 20px;
+            background: #fff;
+            box-shadow: 0 5px 15px rgba(75, 46, 32, 0.10);
+            backdrop-filter: none;
+        }
+
+        .nav_bar img {
+            width: 180px;
+            height: auto;
+            padding-left: 50px;
+            object-fit: contain;
+
+
+        }
+
+        .nav_bar>a,
+        .drop_down>a {
+            display: inline-flex;
+            min-height: 36px;
+            align-items: center;
+            padding: 6px 8px;
+            border-radius: 12px;
+            color: brown;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 18px;
+            font-weight: normal;
+            letter-spacing: normal;
+            text-decoration: none;
+            transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .nav_bar>a:hover,
+        .drop_down>a:hover {
+            transform: scale(1.04);
+            background-color: #fff4e6;
+            color: rgb(209, 10, 176);
+        }
+
+        .drop_down {
+            position: relative;
+        }
+
+        #drop_content {
+            top: calc(100% + 4px);
+            left: 0;
+            min-width: 150px;
+            padding: 5px;
+            transform: none;
+            border: 0;
+            border-radius: 12px;
+            background-color: antiquewhite;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        #drop_content a {
+            padding: 10px 12px;
+            border-radius: 8px;
+            color: brown;
+            font-size: 16px;
+            transition: color 0.3s ease, background-color 0.3s ease;
+        }
+
+        #drop_content a:hover {
+            background-color: bisque;
+            color: rgb(209, 10, 176);
+        }
+
+        .about_hero,
+        .contact_hero {
+            position: relative;
+            isolation: isolate;
+            width: 90%;
+            overflow: hidden;
+            margin: 35px auto 45px;
+            padding: 42px 24px;
+            border: 2px solid bisque;
+            border-radius: 20px;
+            background: #fff;
+            box-shadow: 0 6px 18px rgba(75, 46, 32, 0.08);
+            color: #4b2e20;
+            text-align: center;
+        }
+
+        .about_hero::before,
+        .contact_hero::before {
+            display: block;
+            margin-bottom: 12px;
+            color: brown;
+            content: "MADE SLOWLY. MADE TO LAST.";
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 0.12em;
+        }
+
+        .about_hero::after,
+        .contact_hero::after {
+            display: none;
+        }
+
+        .about_hero h1,
+        .contact_hero h1 {
+            max-width: 850px;
+            margin: 0 auto;
+            color: brown;
+            font-family: "Times New Roman", Times, serif;
+            font-size: clamp(30px, 5vw, 40px);
+            font-weight: bold;
+            letter-spacing: normal;
+            line-height: 1.15;
+        }
+
+        .about_hero p,
+        .contact_hero p {
+            max-width: 700px;
+            margin: 16px auto 0;
+            color: #4b2e20;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .section_title {
+            position: relative;
+            width: 90%;
+            margin: 45px auto 25px;
+            padding: 12px;
+            border: 0;
+            border-bottom: 2px solid bisque;
+            border-radius: 15px;
+            color: brown;
+            font-family: "Times New Roman", Times, serif;
+            font-size: clamp(26px, 4vw, 32px);
+            font-weight: bold;
+            letter-spacing: normal;
+            text-align: center;
+        }
+
+        .section_title::after {
+            position: static;
+            display: none;
+            content: none;
+        }
+
+        .welcome_text,
+        .experience_text,
+        .craftsmanship_text,
+        .quality_text,
+        .modern_text,
+        .Contact_details {
+            padding: 24px;
+            border: 2px solid bisque;
+            border-radius: 20px;
+            background: #fff;
+            box-shadow: 0 5px 15px rgba(75, 46, 32, 0.08);
+            color: #4b2e20;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        .welcome_text p:first-child {
+            color: brown;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 22px;
+        }
+
+        .welcome_image,
+        .experience_image,
+        .craftsmanship_image,
+        .quality_image,
+        .modern_image,
+        .Contact_image {
+            overflow: hidden;
+            border: 2px solid bisque;
+            border-radius: 20px;
+            background: #fff;
+            box-shadow: 0 5px 15px rgba(75, 46, 32, 0.10);
+        }
+
+        .welcome_image img,
+        .experience_image img,
+        .craftsmanship_image img,
+        .quality_image img,
+        .modern_image img,
+        .Contact_image img {
+            border-radius: 16px;
+        }
+
+        .value_card,
+        .why_card,
+        .quick_card {
+            padding: 22px;
+            border: 2px solid bisque;
+            border-radius: 20px;
+            background: #fff;
+            box-shadow: 0 4px 12px rgba(75, 46, 32, 0.06);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .value_card:hover,
+        .why_card:hover,
+        .quick_card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.13);
+        }
+
+        .value_card h3,
+        .why_card h3,
+        .quick_card h3,
+        .Contact_details h2,
+        .form h3 {
+            color: brown;
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        .value_card p,
+        .why_card p,
+        .quick_card p,
+        .map p {
+            color: #4b2e20;
+        }
+
+        .block {
+            margin: 0 0 12px;
+            padding: 12px 14px;
+            border: 1px solid bisque;
+            border-radius: 15px;
+            background: #fffaf3;
+            color: #4b2e20;
+            line-height: 1.6;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .block:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 14px rgba(75, 46, 32, 0.10);
+        }
+
+        .block strong,
+        .id {
+            color: brown;
+        }
+
+        .about_cta,
+        .visit_us,
+        .form {
+            border: 2px solid bisque;
+            border-radius: 20px;
+            background: #fff;
+            box-shadow: 0 6px 18px rgba(75, 46, 32, 0.08);
+            color: #4b2e20;
+        }
+
+        .about_cta h2,
+        .visit_us h2,
+        .enquire>h2,
+        .why_us>h2,
+        .map>h2 {
+            color: brown;
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        .about_cta p,
+        .visit_us p {
+            color: #4b2e20;
+        }
+
+        .about_cta a,
+        .submit_button,
+        .contact_action {
+            border: 0;
+            border-radius: 15px;
+            background: brown;
+            color: #fff;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 17px;
+            font-weight: normal;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .about_cta a:hover,
+        .submit_button:hover,
+        .contact_action:hover {
+            transform: translateY(-3px);
+            background: rgb(209, 10, 176);
+            color: #fff;
+        }
+
+        .id input,
+        .id textarea {
+            border: 1px solid #e7c9a6;
+            border-radius: 12px;
+            background: #fff;
+            color: #4b2e20;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 17px;
+        }
+
+        .id input:focus,
+        .id textarea:focus {
+            border-color: #b87948;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(184, 121, 72, 0.16);
+        }
+
+        .map iframe {
+            border: 2px solid bisque;
+            border-radius: 20px;
+        }
+
+        .faq::before {
+            color: brown;
+        }
+
+        .faq>h1 {
+            color: brown;
+            font-family: "Times New Roman", Times, serif;
+            font-size: clamp(30px, 5vw, 40px);
+            font-weight: bold;
+            letter-spacing: normal;
+        }
+
+        .faq_box details {
+            padding: 0 18px;
+            border: 2px solid bisque;
+            border-radius: 20px;
+            background: #fff;
+            box-shadow: 0 4px 12px rgba(75, 46, 32, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .faq_box details:hover,
+        .faq_box details[open] {
+            border-color: #e8c99f;
+            box-shadow: 0 8px 20px rgba(75, 46, 32, 0.11);
+        }
+
+        .faq_box summary {
+            color: brown;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 18px;
+        }
+
+        .faq_box details p {
+            color: #4b2e20;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .ceramics-footer {
+            color: brown;
+            background-color: wheat;
+
+
+            background-image: url("https://i.pinimg.com/1200x/ce/2d/19/ce2d1970e7a1cb40531ed87727764923.jpg");
+
+            background-size: cover;
+            background-position: center;
+            padding: 52px 24px 20px;
+            font-family: Arial, sans-serif;
+            margin-top: 50px;
+        }
+
+        .ceramics-footer * {
+            box-sizing: border-box;
+        }
+
+        .footer-inner {
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        .footer-main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 42px 64px;
+            padding-bottom: 38px;
+        }
+
+        .footer-brand img {
+            width: 300px;
+            padding-left: 30px;
+        }
+
+        .footer-brand {
+            flex: 1 1 290px;
+            max-width: 390px;
+        }
+
+        .footer-brand-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .footer-stamp {
+            display: inline-flex;
+            width: 58px;
+            height: 58px;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #d5a17c;
+            border-radius: 50%;
+            color: brown;
+            font-family: Georgia, serif;
+            font-size: 20px;
+            letter-spacing: 1px;
+        }
+
+        .footer-brand-name {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 25px;
+            line-height: 1.1;
+        }
+
+        .footer-brand-name span {
+            display: block;
+            color: brown;
+            font-size: 21px;
+            font-style: italic;
+        }
+
+        .footer-tagline {
+            max-width: 310px;
+            margin: 20px 0 0;
+            color: brown;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 17px;
+            line-height: 1.65;
+        }
+
+        .footer-column {
+            flex: 0 1 175px;
+        }
+
+        .footer-heading {
+            margin: 5px 0 17px;
+            color: brown;
+            font-size: 13px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .footer-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .footer-list li+li {
+            margin-top: 12px;
+        }
+
+        .footer-list a,
+        .footer-contact a {
+            color: brown;
+            text-decoration: none;
+        }
+
+        .footer-list a:hover,
+        .footer-contact a:hover {
+            color: brown;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        .footer-contact p {
+            margin: 0 0 12px;
+            color: brown;
+            line-height: 1.6;
+        }
+
+        .footer-bottom {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 10px 24px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(248, 241, 231, 0.25);
+            color: brown;
+            font-size: 13px;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+        }
+
+
+        @media (max-width: 768px) {
+            .head {
+                padding: 25px 10px 15px;
+            }
+
+            .nav_bar {
+                position: relative;
+                top: auto;
+                width: calc(100% - 24px);
+                flex-direction: column;
+                gap: 5px;
+                border-radius: 20px;
+            }
+
+            .nav_bar>a,
+            .drop_down>a {
+                min-height: 34px;
+                font-size: 17px;
+            }
+
+            .drop_down {
+                text-align: center;
+            }
+
+            #drop_content {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .about_hero,
+            .contact_hero,
+            .section_title,
+            .welcome_text,
+            .experience_text,
+            .craftsmanship_text,
+            .quality_text,
+            .modern_text,
+            .Contact_details,
+            .value_card,
+            .why_card,
+            .quick_card,
+            .about_cta,
+            .visit_us,
+            .form,
+            .faq_box details {
+                border-radius: 18px;
+            }
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="head">
+
+        <div>
+
+            <p class="brand_name">Sri Indhu Ceramics</p>
+
+            <h4>Traditional Crafts • Quality • Trust</h4>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="nav_bar">
+        <img src="images/logo.png" />
+        <a href="index.html" target="_blank">Home</a>
+
+
+        <div class="drop_down">
+
+            <a href="index.html#lp" target="_blank">Products</a>
+
+            <div id="drop_content">
+
+                <a href="index.html#lp">Pots</a>
+
+                <a href="index.html#dp">Deepam</a>
+
+
+            </div>
+
+        </div>
+
+
+        <a href="about.html" target="_blank">About Us</a>
+
+        <a href="contact.html" target="_blank">Contact Us</a>
+
+        <a href="faq.html" target="_blank">FAQ</a>
+
+    </nav>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="about_hero">
+
+        <h1>About Sri Indhu Ceramics</h1>
+
+        <p>
+
+            Where traditional craftsmanship meets modern needs.
+
+            With more than 20 years of experience, we are committed
+
+            to creating quality ceramic products with care,
+
+            dedication, and traditional values.
+
+        </p>
+
+    </section>
+
+
+    <!-- ================= WELCOME ================= -->
+
+    <h2 class="section_title">
+
+        Welcome to Sri Indhu Ceramics
+
+    </h2>
+
+
+    <section class="welcome">
+
+
+        <div class="welcome_text">
+
+            <p>
+
+                Welcome to Sri Indhu Ceramics, where tradition,
+
+                craftsmanship, quality, and creativity come together.
+
+            </p>
+
+            <p>
+
+                With more than 20 years of experience in traditional
+
+                pottery making, we are dedicated to creating quality
+
+                clay and ceramic products that combine traditional
+
+                craftsmanship with practical everyday use.
+
+            </p>
+
+            <p>
+
+                Our journey is built on experience, trust,
+
+                hard work, and a passion for pottery.
+
+            </p>
+
+        </div>
+
+
+        <div class="welcome_image">
+
+            <img src="https://i.pinimg.com/736x/e9/25/3b/e9253b99c03790e3d0cdab465545a9b1.jpg" alt="Sri Indhu Ceramics">
+
+        </div>
+
+
+    </section>
+
+
+    <!-- ================= EXPERIENCE ================= -->
+
+    <h2 class="section_title">
+
+        20+ Years of Experience
+
+    </h2>
+
+
+    <section class="experience">
+
+
+        <div class="experience_image">
+
+            <img src="https://cdn.pixabay.com/photo/2026/05/03/03/23/mrha-pottery-10258355_1280.jpg" alt="20 years experience">
+
+        </div>
+
+
+        <div class="experience_text">
+
+            <p>
+
+                At Sri Indhu Ceramics, we have more than 20 years
+
+                of experience in pottery and traditional craftsmanship.
+
+            </p>
+
+            <p>
+
+                Over the years, we have developed valuable skills
+
+                and knowledge in selecting materials, shaping pottery,
+
+                drying, firing, finishing, and quality checking.
+
+            </p>
+
+            <p>
+
+                Our experience allows us to maintain consistency
+
+                and quality in every product we make.
+
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- ================= TRADITIONAL CRAFTSMANSHIP ================= -->
+
+    <h2 class="section_title">
+
+        Traditional Craftsmanship
+
+    </h2>
+
+
+    <section class="craftsmanship">
+
+
+        <div class="craftsmanship_text">
+
+            <p>
+
+                🌿 <strong>Our Traditional Craftsmanship</strong>
+
+            </p>
+
+            <p>
+
+                Pottery is more than just a product for us —
+
+                it is a traditional art passed from generation
+
+                to generation.
+
+            </p>
+
+            <p>
+
+                We respect traditional pottery-making methods
+
+                and carefully follow the important steps involved
+
+                in creating strong and beautiful pottery products.
+
+            </p>
+
+            <p>
+
+                Each product is made with care and attention
+
+                to detail.
+
+            </p>
+
+        </div>
+
+
+        <div class="craftsmanship_image">
+
+            <img src="https://i.pinimg.com/736x/d2/57/18/d25718d69bf87dcbc9f6e2c8b3ccaf17.jpg" alt="Traditional craftsmanship">
+
+        </div>
+
+
+    </section>
+
+
+    <!-- ================= QUALITY ================= -->
+
+    <h2 class="section_title">
+
+        Our Commitment to Quality
+
+    </h2>
+
+
+    <section class="quality">
+
+
+        <div class="quality_text">
+
+            <p>
+
+                Quality is one of our main priorities.
+
+                We carefully inspect our products before they
+
+                reach our customers.
+
+            </p>
+
+            <p>
+
+                We focus on:
+
+            </p>
+
+            <ul>
+
+                <li>Good-quality materials</li>
+
+                <li>Proper finishing</li>
+
+                <li>Attractive and useful designs</li>
+
+                <li>Careful quality checking</li>
+
+                <li>Long-lasting products</li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="quality_image">
+
+            <img src="https://i.pinimg.com/1200x/aa/28/bd/aa28bd2884b9df907789ff35f8627844.jpg" alt="Quality ceramics">
+
+        </div>
+
+
+    </section>
+
+
+    <!-- ================= MODERN NEEDS ================= -->
+
+    <h2 class="section_title">
+
+        Traditional Beauty with Modern Needs
+
+    </h2>
+
+
+    <section class="modern">
+
+
+        <div class="modern_image">
+
+            <img src="https://i.pinimg.com/736x/87/82/36/878236bbe2064ad5e19ce42fed8a28cb.jpg" alt="Traditional beauty with modern needs">
+
+        </div>
+
+
+        <div class="modern_text">
+
+            <p>
+
+                We believe traditional pottery can have a place
+
+                in modern life.
+
+            </p>
+
+            <p>
+
+                Our products combine the beauty of traditional
+
+                craftsmanship with the practical needs of
+
+                today's customers.
+
+            </p>
+
+            <p>
+
+                We aim to preserve the value of traditional
+
+                craftsmanship while creating products that
+
+                fit naturally into modern lifestyles.
+
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- ================= OUR VALUES ================= -->
+
+    <section class="values">
+
+
+        <h2 class="section_title">
+
+            What We Value
+
+        </h2>
+
+
+        <div class="value_cards">
+
+
+            <div class="value_card">
+
+                <h3>🏺 Quality</h3>
+
+                <p>
+
+                    We focus on quality in every product
+
+                    we create.
+
+                </p>
+
+            </div>
+
+
+            <div class="value_card">
+
+                <h3>🌿 Tradition</h3>
+
+                <p>
+
+                    We respect and preserve traditional
+
+                    pottery craftsmanship.
+
+                </p>
+
+            </div>
+
+
+            <div class="value_card">
+
+                <h3>🤝 Trust</h3>
+
+                <p>
+
+                    We believe in building long-lasting
+
+                    relationships with our customers.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+    <!-- ================= CTA ================= -->
+
+    <section class="about_cta">
+
+        <h2>Discover Our Ceramic Collection</h2>
+
+        <p>
+
+            Explore our collection of traditional and useful
+
+            ceramic products or get in touch with us for
+
+            your requirements.
+
+        </p>
+
+        <a href="contact.html">
+
+            Contact Us
+
+        </a>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="ceramics-footer">
+        <div class="footer-inner">
+
+            <div class="footer-main">
+                <section class="footer-brand">
+                    <img src="images/logo.png" />
+
+                    <p class="footer-tagline">
+                        Thoughtfully shaped pottery for warm, beautiful everyday moments.
+                    </p>
+                </section>
+
+                <nav class="footer-column" aria-label="Quick links">
+                    <h2 class="footer-heading">Explore</h2>
+                    <ul class="footer-list">
+                        <li><a href="index.html" target="_blank">Home</a></li>
+                        <li><a href="about.html" target="_blank">Our Story</a></li>
+                        <li><a href="index.html#lp" target="_blank">Collections</a></li>
+                        <li><a href="contact.html" target="_blank">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <section class="footer-column footer-contact" id="contact">
+                    <h2 class="footer-heading">Get in touch</h2>
+                    <p>Questions about a piece or an order?</p>
+
+
+                    <p><a href="mailto:pragashindhu98@gmail.com">pragashindhu98@gmail.com</a></p>
+
+
+                    <p><a href="tel:+919626259453">+91 9626259453</a></p>
+                </section>
+            </div>
+
+            <div class="footer-bottom">
+                <p>2026 Sri Indhu Ceramics. All rights reserved.</p>
+                <p>Made with care, piece by piece.</p>
+            </div>
+
+        </div>
+    </footer>
+</body>
+
+</html>

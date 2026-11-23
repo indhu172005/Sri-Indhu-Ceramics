@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sri Indhu Ceramics</title>
+
+
+    <!-- ================= INTERNAL CSS ================= -->
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Times New Roman", Times, serif;
+            background-color: white;
+            color: #4b2e20;
+            overflow-x: hidden;
+        }
+
+
+        /* ================= HEADER ================= */
+        /* 
+        .head {
+            text-align: center;
+            padding: 25px 10px 15px;
+            background-color: bisque;
+        }
+
+        .head h1 {
+            margin: 0;
+            color: brown;
+            font-size: 38px;
+        }
+
+        .head h4 {
+            margin-top: 12px;
+            color: brown;
+            font-size: 18px;
+            font-weight: normal;
+        } */
+
+
+        .head img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+
+        /* ================= NAVBAR ================= */
+
+        .nav_bar {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+
+            border: 2px solid bisque;
+            padding: 12px;
+            margin: 20px;
+
+            border-radius: 20px;
+
+            position: sticky;
+            top: 0;
+            z-index: 1001;
+
+            background-color: white;
+        }
+
+        .nav_bar img {
+            width: 180px;
+            height: auto;
+            padding-left: 50px;
+            object-fit: contain;
+
+
+        }
+
+        .nav_bar>a,
+        .drop_down>a {
+            text-decoration: none;
+            color: brown;
+            font-size: 18px;
+
+            transition: 0.3s;
+        }
+
+        .nav_bar>a:hover,
+        .drop_down>a:hover {
+            color: rgb(209, 10, 176);
+            transform: scale(1.08);
+        }
+
+
+        /* ================= DROPDOWN ================= */
+
+        .drop_down {
+            position: relative;
+        }
+
+        #drop_content {
+            position: absolute;
+
+            left: 0;
+            top: 25px;
+
+            min-width: 130px;
+
+            background-color: antiquewhite;
+
+            border-radius: 10px;
+
+            overflow: hidden;
+
+            display: none;
+
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        #drop_content a {
+            display: block;
+
+            padding: 10px 15px;
+
+            text-decoration: none;
+
+            color: brown;
+
+            transition: 0.3s;
+        }
+
+        #drop_content a:hover {
+            color: rgb(209, 10, 176);
+            background-color: bisque;
+        }
+
+        .drop_down:hover #drop_content {
+            display: block;
+        }
+
+
+        /* ================= MOVING IMAGE ================= */
+
+        .moveimage {
+            width: 100%;
+
+            overflow: hidden;
+
+            margin-top: 40px;
+
+            padding: 20px 0;
+        }
+
+        .movie_animator {
+            display: flex;
+
+            align-items: center;
+
+            gap: 45px;
+
+            width: max-content;
+
+            animation: move_images 25s linear infinite;
+        }
+
+        .movie_animator h2 {
+            color: brown;
+
+            white-space: nowrap;
+
+            font-size: 30px;
+        }
+
+        .movie_animator img {
+            width: 170px;
+            height: 170px;
+
+            object-fit: cover;
+
+            border-radius: 15px;
+
+            flex-shrink: 0;
+
+            transition: 0.5s;
+        }
+
+        .movie_animator img:hover {
+            transform: scale(1.15);
+        }
+
+        @keyframes move_images {
+
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+
+        }
+
+
+        /* ================= MAIN CONTENT ================= */
+
+        .content {
+            width: 90%;
+
+            margin: 35px auto;
+
+            padding: 20px;
+
+            text-align: center;
+
+            border: 2px solid bisque;
+
+            border-radius: 20px;
+
+            background-color: white;
+        }
+
+        .content h1 {
+            margin: 0;
+
+            color: brown;
+
+            font-size: 30px;
+        }
+
+        .content p {
+            font-size: 18px;
+
+            line-height: 1.6;
+        }
+
+
+        /* ================= FEATURES ================= */
+
+        .details {
+            display: flex;
+
+            justify-content: space-evenly;
+
+            align-items: center;
+
+            gap: 20px;
+
+            width: 90%;
+
+            margin: 30px auto;
+
+            flex-wrap: wrap;
+
+            cursor: pointer;
+        }
+
+        .details p {
+            font-size: 17px;
+
+            padding: 12px;
+
+            text-align: center;
+
+            transition: 1s;
+        }
+
+        .details>p:hover {
+            transform: scale(1.2);
+
+        }
+
+
+        /* ================= EXPLORE ================= */
+
+        .explore {
+            text-align: center;
+
+            margin: 50px auto 35px;
+
+            width: 90%;
+        }
+
+        .explore h2 {
+            color: brown;
+
+            font-size: 30px;
+
+            margin-bottom: 10px;
+        }
+
+        .explore p {
+            font-size: 18px;
+
+            line-height: 1.6;
+        }
+
+
+        /* ================= CATEGORY TITLE ================= */
+
+        .category_title {
+            width: 90%;
+
+            margin: 45px auto 25px;
+
+            padding: 12px;
+
+            text-align: center;
+
+            color: brown;
+
+            border-bottom: 2px solid bisque;
+
+            border-radius: 15px;
+        }
+
+
+        /* ================= LARGE POTS ================= */
+
+        .large_pots {
+            display: flex;
+
+            justify-content: center;
+
+            align-items: stretch;
+
+            gap: 25px;
+
+            width: 90%;
+
+            margin: auto;
+
+            flex-wrap: wrap;
+        }
+
+        .pot {
+            width: 200px;
+
+            padding: 12px;
+
+            text-align: center;
+
+            border: 2px solid bisque;
+
+            border-radius: 20px;
+
+            background-color: white;
+
+            transition: 0.4s;
+        }
+
+        .pot:hover {
+            transform: translateY(-10px);
+
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .pot img {
+            width: 100%;
+
+            height: 180px;
+
+            object-fit: cover;
+
+            border-radius: 15px;
+        }
+
+        .pot h3 {
+            color: brown;
+
+            font-size: 17px;
+        }
+
+
+        /* ================= SMALL POTS ================= */
+
+        .small_pot {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 25px;
+
+            width: 90%;
+
+            margin: auto;
+
+            flex-wrap: wrap;
+
+        }
+
+        .s_pot {
+            width: 180px;
+
+            padding: 12px;
+
+            text-align: center;
+
+            border: 2px solid bisque;
+
+            border-radius: 20px;
+
+            background-color: white;
+
+            transition: 0.4s;
+        }
+
+        .s_pot:hover {
+            transform: translateY(-10px);
+
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .s_pot img {
+            width: 100%;
+
+            height: 170px;
+
+            object-fit: cover;
+
+            border-radius: 15px;
+        }
+
+        .s_pot h3 {
+            color: brown;
+
+            font-size: 16px;
+        }
+
+
+        /* ================= DEEPAM ================= */
+
+        .Deepam {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 25px;
+
+            width: 90%;
+
+            margin: auto;
+
+            flex-wrap: wrap;
+        }
+
+        .deep {
+            width: 180px;
+
+            padding: 12px;
+
+            text-align: center;
+
+            border: 2px solid bisque;
+
+            border-radius: 20px;
+
+            background-color: white;
+
+            transition: 0.4s;
+        }
+
+        .deep:hover {
+            transform: translateY(-10px);
+
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .deep img {
+            width: 100%;
+
+            height: 170px;
+
+            object-fit: cover;
+
+            border-radius: 15px;
+        }
+
+        .deep h3 {
+            color: brown;
+
+            font-size: 16px;
+        }
+
+
+        /* ================= PRICE ================= */
+
+        .price {
+            color: brown;
+
+            font-size: 18px;
+
+            font-weight: bold;
+        }
+
+        
+          /* ===================================toys=========================== */
+         .Toys {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 25px;
+
+            width: 90%;
+
+            margin: auto;
+
+            flex-wrap: wrap;
+        }
+
+        .tp {
+            width: 180px;
+
+            padding: 12px;
+
+            text-align: center;
+
+            border: 2px solid bisque;
+
+            border-radius: 20px;
+
+            background-color: white;
+
+            transition: 0.4s;
+        }
+
+        .tp:hover {
+            transform: translateY(-10px);
+
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .tp img {
+            width: 100%;
+
+            height: 170px;
+
+            object-fit: cover;
+
+            border-radius: 15px;
+        }
+
+        .tp h3 {
+            color: brown;
+
+            font-size: 16px;
+        }
+
+         .price {
+            color: brown;
+
+            font-size: 18px;
+
+            font-weight: bold;
+        }
+
+        /* ================= FOOTER ================= */
+
+        
+.ceramics-footer {
+  color:brown;
+  background-color:wheat;
+  background-image:url("https://i.pinimg.com/1200x/ce/2d/19/ce2d1970e7a1cb40531ed87727764923.jpg");
+  margin-top: 10px;
+  background-size: cover;
+  background-position: center;
+  padding: 52px 24px 20px;
+  font-family: Arial, sans-serif;
+  background-repeat: no-repeat;
+  width: 100%;
+  object-fit: cover;
+}
+
+.ceramics-footer * {
+  box-sizing: border-box;
+}
+
+.footer-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.footer-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 42px 64px;
+  padding-bottom: 38px;
+}
+.footer-brand img{
+    width: 300px;
+    padding-left:30px;
+}
+
+.footer-brand {
+  flex: 1 1 290px;
+  max-width: 390px;
+}
+
+.footer-brand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-stamp {
+  display: inline-flex;
+  width: 58px;
+  height: 58px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d5a17c;
+  border-radius: 50%;
+  color: brown;
+  font-family: Georgia, serif;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+.footer-brand-name {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 25px;
+  line-height: 1.1;
+}
+
+.footer-brand-name span {
+  display: block;
+  color:brown;
+  font-size: 21px;
+  font-style: italic;
+}
+
+.footer-tagline {
+  max-width: 310px;
+  margin: 20px 0 0;
+  color:brown;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.footer-column {
+  flex: 0 1 175px;
+}
+
+.footer-heading {
+  margin: 5px 0 17px;
+  color:brown;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.footer-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-list li + li {
+  margin-top: 12px;
+}
+
+.footer-list a,
+.footer-contact a {
+  color: brown;
+  text-decoration: none;
+}
+
+.footer-list a:hover,
+.footer-contact a:hover {
+  color: brown;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.footer-contact p {
+  margin: 0 0 12px;
+  color:brown;
+  line-height: 1.6;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px 24px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(248, 241, 231, 0.25);
+  color: brown;
+  font-size: 13px;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  .ceramics-footer {
+    padding: 40px 20px 18px;
+  }
+
+  .footer-main {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .footer-brand {
+    max-width: 100%;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 768px) {
+
+            .head h1 {
+                font-size: 28px;
+            }
+
+            .nav_bar {
+                flex-direction: column;
+
+                gap: 15px;
+
+                position: relative;
+            }
+
+            .drop_down {
+                text-align: center;
+            }
+
+            #drop_content {
+                left: 50%;
+
+                transform: translateX(-50%);
+            }
+
+            .movie_animator img {
+                width: 130px;
+                height: 130px;
+            }
+
+            .movie_animator h2 {
+                font-size: 22px;
+            }
+
+            .content h1 {
+                font-size: 24px;
+            }
+
+            .details {
+                flex-direction: column;
+
+                gap: 5px;
+            }
+
+            .pot {
+                width: 170px;
+            }
+
+            .s_pot {
+                width: 160px;
+            }
+
+            .deep {
+                width: 160px;
+            }
+
+        }
+
+        /* ==========================whatsapp button=============================== */
+
+        .whatsapp-btn {
+            position: fixed;
+            right: 10px;
+            bottom: 70px;
+            z-index: 9999;
+            text-decoration: none;
+            transition: 1s;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-btn img {
+            width: 50px;
+            height: 60px;
+            display: block;
+            border-radius: 40px;
+            border: 1px solid green;
+        }
+
+        .instagram-btn {
+            position: fixed;
+            right: 10px;
+            bottom: 140px;
+            z-index: 9999;
+            text-decoration: none;
+            transition: 1s;
+        }
+
+        .instagram-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .instagram-btn img {
+            width: 50px;
+            height: 60px;
+            display: block;
+            border-radius: 40px;
+            border: 1px solid green;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="head">
+
+        <!-- <h1>
+            Welcome to Sri Indhu Ceramics
+        </h1>
+
+        <h4>
+            Traditional Crafts
+        </h4> -->
+        <img src="images/banner.png" />
+
+    </header>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+
+    <nav class="nav_bar">
+        <img src="images/logo.png" />
+        <a href="index.html">
+            Home
+        </a>
+
+
+        <div class="drop_down">
+
+            <a href="#lp">
+                Products
+            </a>
+
+
+            <div id="drop_content">
+
+                <a href="#lp">
+                    Pots
+                </a>
+
+                <a href="#dp">
+                    Deepam
+                </a>
+
+
+
+            </div>
+
+        </div>
+
+
+        <a href="about.html" target="_blank">
+            About Us
+        </a>
+
+
+        <a href="contact.html" target="_blank">
+            Contact Us
+        </a>
+
+
+        <a href="faq.html" target="_blank">
+            FAQ
+        </a>
+
+    </nav>
+
+
+
+    <!-- ================= MOVING IMAGES ================= -->
+
+    <section class="moveimage">
+
+        <div class="movie_animator">
+
+
+
+            <img
+                src="https://i.pinimg.com/1200x/aa/28/bd/aa28bd2884b9df907789ff35f8627844.jpg" />
+
+            <img
+                src="https://i.pinimg.com/736x/09/eb/ce/09ebcee1066b31e2a806c35049d78628.jpg">
+
+            <img
+                src="https://i.pinimg.com/1200x/f9/7d/6e/f97d6e6039c2d693c713d9d48eb8986e.jpg">
+
+            <img
+                src="https://i.pinimg.com/1200x/23/55/80/235580f03caf2afe9dfe5bd626120148.jpg">
+
+            <img
+                src="https://i.pinimg.com/1200x/ec/be/cd/ecbecd3b88a3de8c5fab215029bcf310.jpg">
+
+            <img
+                src="https://i.pinimg.com/1200x/37/21/2a/37212a74e88c6f3a30f9560e36097596.jpg">
+
+            <img
+                src="https://i.pinimg.com/1200x/1f/30/3b/1f303b277e05f4defac3b7cb86e4fb28.jpg">
+
+            <img
+                src="https://i.pinimg.com/736x/bf/60/b3/bf60b3de6ecda71da32999add8864e62.jpg">
+
+            <img
+                src="https://i.pinimg.com/1200x/4c/41/d0/4c41d076e0cbfa0eea7bd54c45d591e5.jpg">
+
+            <img
+                src="https://i.pinimg.com/736x/3d/17/d5/3d17d50ecf82352fe81e7702c39a7662.jpg">
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= CONTENT ================= -->
+
+    <section class="content">
+
+        <h1>
+            Handcrafted Pottery for a Beautiful Home
+        </h1>
+
+        <p>
+            Discover beautifully handcrafted pottery made with
+            traditional techniques and genuine care.
+        </p>
+
+    </section>
+
+
+
+    <!-- ================= FEATURES ================= -->
+
+    <section class="details">
+
+        <p>
+            🏺 Best of Handmade Pottery
+        </p>
+
+        <p>
+            📦 Eco-friendly Packaging
+        </p>
+
+        <p>
+            🚚 Shipping PAN India
+        </p>
+
+        <p>
+            💳 Secure Payment
+        </p>
+
+    </section>
+
+
+
+    <!-- ================= EXPLORE ================= -->
+
+    <section class="explore">
+
+        <h2>
+            Explore Categories
+        </h2>
+
+        <p>
+            Discover our collection of traditional handmade
+            pottery crafted with care and passion.
+        </p>
+
+    </section>
+
+
+
+    <!-- ================= LARGE POTS ================= -->
+
+    <h2 id="lp" class="category_title">
+        LARGE POTS
+    </h2>
+
+    <section class="large_pots">
+
+
+        <div class="pot">
+
+            <img
+                src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Udaipur_%28distrito%29_2002_31.jpg/250px-Udaipur_%28distrito%29_2002_31.jpg?utm_source=commons.wikimedia.org&utm_campaign=gallery&utm_content=thumbnail">
+
+            <h3>
+                Terracotta Plain Pot
+            </h3>
+
+            <p class="price">
+                ₹1000
+            </p>
+
+        </div>
+
+
+        <div class="pot">
+
+            <img
+                src="https://th.bing.com/th/id/OIP.NVRW5kdZs7m7hp5zCAsGpQHaHa?w=219&h=219&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3">
+
+            <h3>
+                Sand Beige Leaf Design
+            </h3>
+
+            <p class="price">
+                ₹1200
+            </p>
+
+        </div>
+
+
+        <div class="pot">
+
+            <img
+                src="https://th.bing.com/th/id/OIP.6xHkNCEnb-wC507FYFVWFQHaH6?w=201&h=215&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3">
+
+            <h3>
+                Dark Brown Carved Pot
+            </h3>
+
+            <p class="price">
+                ₹1400
+            </p>
+
+        </div>
+
+
+        <div class="pot">
+
+            <img
+                src="https://th.bing.com/th/id/OIP.kw0CDKkwB7clVjqo8KZt3wHaHa?w=185&h=185&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3">
+
+            <h3>
+                Red Cream Pattern
+            </h3>
+
+            <p class="price">
+                ₹1500
+            </p>
+
+        </div>
+
+
+        <div class="pot">
+
+            <img
+                src="https://th.bing.com/th/id/OIP.eKll_-tezdnU47spcEXbIAHaIy?w=162&h=193&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3">
+
+            <h3>
+                Black Wood Fired Pot
+            </h3>
+
+            <p class="price">
+                ₹1400
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ================= SMALL POTS ================= -->
+
+    <h2 id="sp" class="category_title">
+        SMALL POTS
+    </h2>
+
+
+    <section class="small_pot">
+
+
+        <div class="s_pot">
+
+            <img
+                src="https://th.bing.com/th/id/OIP.S9MEdjL2oUcoiuk5JrrrzwHaJC?w=158&h=193&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3">
+
+            <h3>
+                Beige Leaf Design
+            </h3>
+
+            <p class="price">
+                ₹100
+            </p>
+
+        </div>
+
+
+        <div class="s_pot">
+
+            <img
+                src="data:image/jpeg;base64,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">
+
+            <h3>
+                Red Cream Pattern
+            </h3>
+
+            <p class="price">
+                ₹100
+            </p>
+
+        </div>
+
+
+        <div class="s_pot">
+
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIC8oyyANmSdAh0z0UM6936MLJb267CdYnnRKMzXVImA&s=10">
+
+            <h3>
+                Dark Wood Fired
+            </h3>
+
+            <p class="price">
+                ₹100
+            </p>
+
+        </div>
+
+
+        <div class="s_pot">
+
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4658rDVZWn_FfvXhIl8oEUeRWL30S2UcOTUIbA0apoQ&s">
+
+            <h3>
+                Terracotta Plain
+            </h3>
+
+            <p class="price">
+                ₹100
+            </p>
+
+        </div>
+
+
+        <div class="s_pot">
+
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTnv40f8yaj2avqTg4IS69ag6X8RlcYCXqhG6hXXrfVw&s=10">
+
+            <h3>
+                Dark Carved Pot
+            </h3>
+
+            <p class="price">
+                ₹100
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ================= DEEPAM ================= -->
+
+    <h2 id="dp" class="category_title">
+        DEEPAM
+    </h2>
+
+
+    <section class="Deepam">
+
+
+        <div class="deep">
+
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC06JTAESW1st48XKugyWw_87yt0JJu9nArR3-D4yvnw&s=10">
+
+            <h3>
+                Classic Bowl
+            </h3>
+
+            <p class="price">
+                ₹10
+            </p>
+
+        </div>
+
+
+        <div class="deep">
+
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ65cPASFu1w4xuci3NYzUNPYUnhHjiUwNA_6VxsWxnKg&s">
+
+            <h3>
+                Lotus Deepam
+            </h3>
+
+            <p class="price">
+                ₹10
+            </p>
+
+        </div>
+
+
+        <div class="deep">
+
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOMRkubEsK9LVf7u7keseVA3ilp5VrU8IL1F0peP6U3A&s=10">
+
+            <h3>
+                Ornate Round
+            </h3>
+
+            <p class="price">
+                ₹10
+            </p>
+
+        </div>
+
+
+        <div class="deep">
+
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4xC45Dg0ceUFokv7HlsQz8JBDDSYU9a9uT1W3jRHuwA&s=10">
+
+            <h3>
+                Star Lotus
+            </h3>
+
+            <p class="price">
+                ₹10
+            </p>
+
+        </div>
+
+
+        <div class="deep">
+
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgl7pPZC2koKMiF2DDAB5Z5YPvwusERSPLEYT8Up50YA&s=10">
+
+            <h3>
+                Pedestal Deepam
+            </h3>
+
+            <p class="price">
+                ₹10
+            </p>
+
+        </div>
+
+
+        <div class="deep">
+
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnSpJYYQmbJG6VxfhOho9FCRnMQ0U7XrHu6sjyOwW9Nw&s=10" />
+
+            <h3>
+                Peacock Deepam
+            </h3>
+
+            <p class="price">
+                ₹10
+            </p>
+
+        </div>
+
+
+        <div class="deep">
+
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcg1A7j6l9fkz3zD0RBXxKbGzlMYy3TOaK1vjMCd5i1w&s=10">
+
+            <h3>
+                Peacock Design
+            </h3>
+
+            <p class="price">
+                ₹10
+            </p>
+
+        </div>
+
+
+        <div class="deep">
+
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMfEy4ZwOpusUdXUIeaHVcMXVv7gSc7yXr6X0mFe8PCA&s">
+
+            <h3>
+                Perforated Deepam
+            </h3>
+
+            <p class="price">
+                ₹10
+            </p>
+
+        </div>
+
+
+        <div class="deep">
+
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrAFjUCAdCRMhUns98vMgC0MfeZSASZh78DtFWCPlDrg&s=10">
+
+            <h3>
+                Four Wick
+            </h3>
+
+            <p class="price">
+                ₹10
+            </p>
+
+        </div>
+
+
+        <div class="deep">
+
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4FVGdt5NjXhGVsOrv7MByBuId-9inENokN8Prcgjnrw&s">
+
+            <h3>
+                Temple Deepam
+            </h3>
+
+            <p class="price">
+                ₹10
+            </p>
+        </div>
+<!-- ===================================Toys=================================================== -->
+ <!-- <h2 id="Tp" class="category_title">
+        TOYS
+    </h2>
+
+
+    <section class="Toys">
+
+
+        <div class="tp">
+
+            <img
+                src="https://i.pinimg.com/736x/fa/23/17/fa231720c04572f8dc1f0a4cfdb9ff15.jpg">
+
+            <h3>
+                cat 
+            </h3>
+
+            <p class="price">
+                ₹100
+            </p>
+
+        </div>
+
+
+        <div class="tp">
+
+            <img
+                src="https://i.pinimg.com/1200x/91/c8/35/91c835d52cd96e0af49238c8e967d5d7.jpg">
+
+            <h3>
+                Tortoise
+            </h3>
+
+            <p class="price">
+                ₹150
+            </p>
+
+        </div>
+
+
+        <div class="tp">
+
+            <img
+                src="https://i.pinimg.com/1200x/be/65/8e/be658ef0ac269cf4a6c72712e880f759.jpg">
+
+            <h3>
+               Dog 
+            </h3>
+
+            <p class="price">
+                ₹190
+            </p>
+
+        </div>
+
+
+        <div class="tp">
+
+            <img
+                src="https://i.pinimg.com/1200x/92/96/09/929609eb306b3ea14dd3d8e08c82caf8.jpg">
+
+            <h3>
+                beer
+            </h3>
+
+            <p class="price">
+                ₹170
+            </p>
+
+        </div>
+
+
+        <div class="tp">
+
+            <img
+                src="https://i.pinimg.com/1200x/9c/dd/94/9cdd947c01c8675b0c4ef4106d179b70.jpg">
+
+            <h3>
+                Vinayagar 
+            </h3>
+
+            <p class="price">
+                ₹150
+            </p>
+
+        </div>  -->
+
+
+        <!-- <div class="tp">
+
+            <img
+                src="https://i.pinimg.com/1200x/28/5e/30/285e30761431bf05c784e32796f4c1bb.jpg" />
+
+            <h3>
+               buddha
+            </h3>
+
+            <p class="price">
+                ₹400
+            </p>
+
+        </div>
+
+
+        <div class="tp">
+
+            <img
+                src="https://i.pinimg.com/736x/33/6a/7c/336a7cc2841064f0489e910afbb06b41.jpg">
+
+            <h3>
+               couples
+            </h3>
+
+            <p class="price">
+                ₹450
+            </p>
+
+        </div>
+
+
+        <div class="tp">
+
+            <img
+                src="https://i.pinimg.com/736x/b5/0e/fd/b50efdb958895954f4434aafe1226173.jpg">
+
+            <h3>
+                Thanjavur doll
+            </h3>
+
+            <p class="price">
+                ₹300
+            </p>
+
+        </div>
+
+
+        <div class="tp">
+
+            <img
+                src="https://i.pinimg.com/1200x/d2/12/c7/d212c7515ab9d3fc1ec8ac080585eaaa.jpg">
+
+            <h3>
+                kids collection
+            </h3>
+
+            <p class="price">
+                ₹700
+            </p>
+
+        </div>
+
+
+        <div class="tp">
+
+            <img
+                src="https://i.pinimg.com/1200x/07/51/fc/0751fcde7443032a01f5a052415b3ab9.jpg">
+
+            <h3>
+               family 
+            </h3>
+
+            <p class="price">
+                ₹300
+            </p>
+        </div>
+
+        <!-- ================================whatsapp insta================================= -->
+        <a href="https://wa.me/919626259453" class="whatsapp-btn" target="_blank">
+            <img src="https://images.surferseo.art/bfb60767-8efd-40d8-a9a5-d0ed6e35276a.jpeg" alt="whatsapp" />
+        </a>
+
+        <a href="https://www.instagram.com/accounts/login/?hl=en" class="instagram-btn" target="_blank">
+            <img src="https://img.magnific.com/free-vector/instagram-icon_1057-2227.jpg?semt=ais_hybrid&w=740&q=80"
+                alt="whatsapp" />
+        </a>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+
+<footer class="ceramics-footer">
+  <div class="footer-inner">
+
+    <div class="footer-main">
+      <section class="footer-brand">
+        <img src="images/logo.png" />
+
+        <p class="footer-tagline">
+          Thoughtfully shaped pottery for warm, beautiful everyday moments.
+        </p>
+      </section>
+
+      <nav class="footer-column" aria-label="Quick links">
+        <h2 class="footer-heading">Explore</h2>
+        <ul class="footer-list">
+          <li><a href="index.html" target="_blank">Home</a></li>
+          <li><a href="about.html" target="_blank">Our Story</a></li>
+          <li><a href="index.html#lp" target="_blank">Collections</a></li>
+          <li><a href="contact.html" target="_blank">Contact</a></li>
+        </ul>
+      </nav>
+
+      <section class="footer-column footer-contact" id="contact">
+        <h2 class="footer-heading">Get in touch</h2>
+        <p>Questions about a piece or an order?</p>
+
+   
+        <p><a href="mailto:pragashindhu98@gmail.com">pragashindhu98@gmail.com</a></p>
+
+        
+        <p><a href="tel:+919626259453">+91 9626259453</a></p>
+      </section>
+    </div>
+
+    <div class="footer-bottom">
+      <p>2026 Sri Indhu Ceramics. All rights reserved.</p>
+      <p>Made with care, piece by piece.</p>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+
+</html>
